@@ -128,3 +128,14 @@ ls -l *.fasta | wc -l # number of files with fasta extension
 # Remove duplicates
 
 uniq -d file.txt
+
+# loop a MATLAB function over each file in a directory
+fls = dir( fullfile( 'path', 'to', 'my', 'folder', '*.txt' ) ); 
+for ii = 1: numel(fls)
+    infile = fullfile( 'path', 'to', 'my', 'folder', fls(ii).name );
+    outfile = fullfile( 'path', 'to', 'my', 'folder', [fls(ii).name(1:end-4),'.DL'] ); 
+    myFunction( infile, outfile );
+end
+
+
+
