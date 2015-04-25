@@ -146,8 +146,8 @@ for f in *.pdb
 do
 
 awk '$1=="ATOM"&&$3=="CA"&&$5=="A"' $f > ""$f".atom"                      #extract CA file
-perl sele.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> sizes.txt;      #size of each pdb in one file(first & last atom)
-perl sele20.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> first20.txt;  #first 20 positions and AA 
+perl sele.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> sizes.txt;      #size of each pdb in one file(first & last atom), sele.pl -> perl script
+perl sele20.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> first20.txt;  #first 20 positions and AA -> sele20.pl -> perl script
 
 done
 
