@@ -129,6 +129,8 @@ ls -l *.fasta | wc -l # number of files with fasta extension
 
 uniq -d file.txt
 
+#--------------------------------------------------------------------------------------------
+
 # loop a MATLAB function over each file in a directory
 fls = dir( fullfile( 'path', 'to', 'my', 'folder', '*.txt' ) ); 
 for ii = 1: numel(fls)
@@ -137,5 +139,15 @@ for ii = 1: numel(fls)
     myFunction( infile, outfile );
 end
 
+#--------------------------------------------------------------------------------------------
 
+#parsing each '.pdb' in a directory
+for f in *.pdb
+do
+
+awk '$1=="ATOM"&&$3=="CA"&&$5=="A"' $f > ""$f".atom"                      #extract CA file
+perl sele.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> sizes.txt;      #size of each pdb in one file(first & last atom)
+perl sele20.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> first20.txt;  #first 20 positions and AA 
+
+done
 
