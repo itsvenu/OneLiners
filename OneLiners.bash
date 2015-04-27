@@ -151,3 +151,6 @@ perl sele20.pl ""$f".atom" | awk '{print$1"\t"$4"\t"$6}' >> first20.txt;  #first
 
 done
 
+# awk Onliner for extracting true positive and the contacts which are below the specified level
+
+ awk '{print "fgrep -xf "$1"  "$2 "  >  " $2".tp\n\n""awk $1 < && $2< "$2".tp > "$2".fh\n" "awk $1 < && $2> "$2".tp > "$2".fsh\n""awk $1> && $2> "$2".tp > "$2".sh\n"}' pctop > split.bash
