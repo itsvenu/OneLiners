@@ -101,6 +101,10 @@ awk -F "\t" '$1>4000{print$1"\t"$2"\t"...}' in.txt
 
 awk -VORS=, '{print$1}' input.txt | sed 's/, $/\n/' > out.txt
 
+#print rows of a file matching the values in particular column.
+
+awk 'FNR==NR{a[$4,$5]=$0;next}{if(b=a[$4,$5]){print b}}' file1 file2
+
 # --- PERL
 
 # Modyfying HMM db(pfam) PF00012.3 --> PF00012
