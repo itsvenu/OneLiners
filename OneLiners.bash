@@ -105,6 +105,10 @@ awk -VORS=, '{print$1}' input.txt | sed 's/, $/\n/' > out.txt
 
 awk 'FNR==NR{a[$4,$5]=$0;next}{if(b=a[$4,$5]){print b}}' file1 file2
 
+#Extract text lines between 2 specific patterns
+
+nawk '/line1/, /line2/' inFile.txt
+
 # --- PERL
 
 # Modyfying HMM db(pfam) PF00012.3 --> PF00012
