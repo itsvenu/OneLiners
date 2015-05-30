@@ -65,6 +65,11 @@ grep -v -f list.txt file.txt
 
 grep -v '^>' in.faa | tr -d "\n" | cut -c10 # residue in 10th postion ( -c1,10)--> 1 and 10th position
 
+#index of a charecter in a string
+
+grep -aob '\.' stringFile.txt # returns index and charecter in colors Ex: 14:.
+grep -aob '\.' stringFile.txt --color=never | \grep -oE '[0-9]+' #returns simple index
+
 #-----------
 #   awk    -
 #-----------
