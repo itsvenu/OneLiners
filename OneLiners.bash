@@ -167,3 +167,11 @@ done
 # awk Onliner for extracting true positive and the contacts which are below the specified level
 
  awk '{print "fgrep -xf "$1"  "$2 "  >  " $2".tp\n\n""awk $1 < && $2< "$2".tp > "$2".fh\n" "awk $1 < && $2> "$2".tp > "$2".fsh\n""awk $1> && $2> "$2".tp > "$2".sh\n"}' pctop > split.bash
+
+# append sequnce of a file in one dir. to a similar named file in other dir.
+
+for fasta in `python -c 'import os; dir1=[fasta for fasta in os.listdir("dir1")]; dir2=[fasta for fasta in os.listdir("dir2") ]; print " ".join(list(set(dir1).intersection(dir2)))'`
+do
+tail -n +2 dir2/$fasta >> dir1/$fasta
+done
+
