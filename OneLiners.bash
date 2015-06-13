@@ -37,6 +37,10 @@ sed -i '1s/^/beginning\n\n' in.txt
 
 sed 's/./& /' in.txt
 
+# Extract NMR models from PDB file
+
+sed -n '/MODEL         1/,/ENDMDL/p' in.pdb > out.pdb
+
 #-----------
 #   grep   -
 #-----------
