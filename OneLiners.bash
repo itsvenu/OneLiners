@@ -61,6 +61,8 @@ grep -A 4 'PATTERN' file.txt # after matching
 grep -B 4 'PATTERN' file.txt # before matching
 grep -c 2 5 'PATTERN' file.txt # 2 lines before & 5 lines after matching
 
+grep -B1 '^[[:digit:]]' file.txt # print 1 line before of the line that starts with a digit
+
 # Remove rows in a file with a list in another file
 
 grep -v -f list.txt file.txt
