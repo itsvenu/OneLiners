@@ -1,5 +1,9 @@
 ## Basic One liners which are most useful
 
+#Download files from SRA (NCBI) with wget
+
+wget "ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByStudy/sra/SRP%2FSRP003%2FSRP003475/SRR065223/"
+
 # Extract fasta sequences from MSA based on ids from other file
 
 # SAM tools
