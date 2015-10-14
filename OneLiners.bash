@@ -120,6 +120,10 @@ awk -VORS=, '{print$1}' input.txt | sed 's/, $/\n/' > out.txt
 
 awk 'FNR==NR{a[$4,$5]=$0;next}{if(b=a[$4,$5]){print b}}' file1 file2
 
+#Compare column1 from 2 files and print all the columns from both files
+
+awk -F '\t' -v OFS='\t' 'NR==FNR{a[$1]=$1 OFS $2; next} $1 in a{print $2, a[$1]}' file1 file2 | awk '{print$2"\t"$1"\t"$3}'
+
 #Extract text lines between 2 specific patterns
 
 nawk '/line1/, /line2/' inFile.txt
