@@ -59,6 +59,8 @@ grep -Fwf file1 file2 # text
 
 grep -Fvf file1 file2
 
+grep -F -x -v -f file1 file2 #for text files, prints uniq lines from file2
+
 # print exact number of lines after matching a pattern
 
 grep -A 4 'PATTERN' file.txt # after matching
