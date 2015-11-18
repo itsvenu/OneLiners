@@ -45,6 +45,10 @@ sed 's/./& /' in.txt
 
 sed -n '/MODEL         1/,/ENDMDL/p' in.pdb > out.pdb
 
+#change format of text file for every 2 lines
+
+sed "N;s/\n/\t/" InFile.txt
+
 #-----------
 #   grep   -
 #-----------
