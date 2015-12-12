@@ -54,7 +54,7 @@ vcf-isec -c S6_GermVar_filtered.vcf.gz S6_SomVar_filtered.vcf.gz > S6_germ_only.
 ./convert2annovar.pl -format vcf4 S6_SomVar_filtered.vcf > S6_Somatic_AnnIn.vcf
 ./convert2annovar.pl -format vcf4 S6_germ_only.vcf > S6_GermOnly_AnnIn.vcf
 
-# Add germ to somatic
+# Add germ to somatic 
 
 cat S6_GermOnly_AnnIn.vcf >> S6_Somatic_AnnIn.vcf
 
