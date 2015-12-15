@@ -134,6 +134,10 @@ awk -F '\t' -v OFS='\t' 'NR==FNR{a[$1]=$1 OFS $2; next} $1 in a{print $2, a[$1]}
 
 nawk '/line1/, /line2/' inFile.txt
 
+#skip first field and print from second column from a multi column text file
+
+awk '{print substr($0, index($0,$2))}' infile.txt
+
 # --- PERL
 
 # Modyfying HMM db(pfam) PF00012.3 --> PF00012
