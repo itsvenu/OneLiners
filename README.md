@@ -1,2 +1,2 @@
 #### OneLiners
-Important Onliners I often use during my work
+Important Oneliners I often use during my work
