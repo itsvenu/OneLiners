@@ -17,4 +17,9 @@ vcf-isec -n +2 file1.vcf.gz file2.vcf.gz | bgzip -c > CommonVar.vcf.gz
 
 zcat file.vcf.gz | grep -v '^#' | grep -oP "DP=\w+" | sed 's/DP=//' | awk '{s += $1}END{print s/NR}'
 
+# FIlter any VCF file based on arbitrary terms, snpsift.jar
+
+java -jar ~/seq-tools/snpEff/SnpSift.jar filter "(QUAL>30) & (AF > 0.15) & (AO > 4) & (DP > 10) & (STB < 0.95)" in.vcf 
+
+
 
