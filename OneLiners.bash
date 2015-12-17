@@ -199,3 +199,9 @@ do
 tail -n +2 dir2/$fasta >> dir1/$fasta
 done
 
+# Convert .xls file to text file in UNIX
+
+ssconvert infile.xls outfile.txt #generates CSV file
+sed -i 's/,/\t/g' outfile.txt # CSV --> TSV file
+
+
