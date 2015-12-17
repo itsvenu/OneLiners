@@ -5,6 +5,8 @@
 bgzip -c file.vcf > file.vcf.gz
 tabix -p vcf file.vcf.gz
 
+tabix -h vcf_file.vcf chr1:1000-1000 # make a subset of VCF file along with header
+
 #Compare two VCF files and list out variants present in file1 only
 
 vcf-isec -c file1.vcf.gz file2.vcf.gz file3.vcf.gz | bgzip -c > file1_only.vcf.gz
