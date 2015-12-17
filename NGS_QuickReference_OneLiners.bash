@@ -5,7 +5,7 @@
 bgzip -c file.vcf > file.vcf.gz
 tabix -p vcf file.vcf.gz
 
-tabix -h vcf_file.vcf chr1:1000-1000 # make a subset of VCF file along with header
+tabix -h vcf_file.vcf.gz chr1:1000-1000 # make a subset of VCF file along with header
 
 #Compare two VCF files and list out variants present in file1 only
 
