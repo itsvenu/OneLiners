@@ -18,6 +18,18 @@ Fastqc, prinseq
 # Annotator use
 1. ANNOVAR
 
+#Workflow
+SAM to BAM
+index BAM
+Create intervals for realigning
+Realign
+Increase SNP specificity with samtools calmd
+Remove reads whose MAPQ < x (samtools -bq)
+Add 'RG' (ReadGroup) information, if it is not there in BAM with picard AddOrReplaceReadGroups
+Markduplicates with picard Markduplicates
+Index new BAM(came from above steps) file
+Create Ref.fa.fai and Ref.fa.dict with 'samtools faidx' and 'picard CreateSequenceDictionary' respectively 
+
 # These aligners give output in 'sam' format
 # Convert SAM to BAM (use SAMtools)
 
