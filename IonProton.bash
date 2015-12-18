@@ -10,6 +10,11 @@ Fastqc, prinseq
 2. BWA-MEM
 3. BBmap
 
+#Variant callers used
+1. GATK
+2. freebayes
+3. platypus
+
 # These aligners give output in 'sam' format
 # Convert SAM to BAM (use SAMtools)
 
