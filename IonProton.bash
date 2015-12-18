@@ -15,6 +15,9 @@ Fastqc, prinseq
 2. freebayes
 3. platypus
 
+# Annotator use
+1. ANNOVAR
+
 # These aligners give output in 'sam' format
 # Convert SAM to BAM (use SAMtools)
 
