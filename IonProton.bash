@@ -64,6 +64,11 @@ java -jar GenomeAnalysisTK.jar -T IndelRealigner -R hg19.faa -I mapped.bam -targ
 
 samtools calmd -Abr mapped_realigned.bam  hg19.faa > mapped_realigned_calmd.bam
 
+#Filter BAM based on mapping qaulity
+
+samtools view -q 30 -b mapped_realigned_calmd_q30.bam
+
+###########
 #Call SNPs and Indels (GATK) include '-glm BOTH' option 
 #UnifiedGenotyper 
 
