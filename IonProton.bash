@@ -49,6 +49,10 @@ samtools view -b -f 4 sorted_aligned.bam > unamapped.bam
 
 samtools view -b F 4 sorted_aligned.bam > mapped.bam
 
+#Filter BAM based on mapping qaulity
+
+samtools view -q 30 -b mapped_q30.bam
+
 #Consider this mapped reads for further analysis
 #Identify target regions for realignment (GATK)
 
@@ -64,9 +68,6 @@ java -jar GenomeAnalysisTK.jar -T IndelRealigner -R hg19.faa -I mapped.bam -targ
 
 samtools calmd -Abr mapped_realigned.bam  hg19.faa > mapped_realigned_calmd.bam
 
-#Filter BAM based on mapping qaulity
-
-samtools view -q 30 -b mapped_realigned_calmd_q30.bam
 
 ###########
 #Call SNPs and Indels (GATK) include '-glm BOTH' option 
