@@ -62,7 +62,7 @@ java -jar GenomeAnalysisTK.jar -T RealignerTargetCreator -R hg19.faa -I mapped.b
 
 #Realign BAM with above got intervals (for better InDel calling)
 
-java -jar GenomeAnalysisTK.jar -T IndelRealigner -R hg19.faa -I mapped.bam -targetIntervals RealignerTargetCreator -output mapped_realigned.bam
+java -jar GenomeAnalysisTK.jar -T IndelRealigner -R hg19.faa -I mapped.bam -targetIntervals Realign.intervals -o mapped_realigned.bam
 
 # To improve the SNP specificity do 'samtools calmd' 
 
