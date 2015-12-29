@@ -47,7 +47,7 @@ samtools view -b -f 4 sorted_aligned.bam > unamapped.bam
 
 # Get Mapped reads
 
-samtools view -b F 4 sorted_aligned.bam > mapped.bam
+samtools view -b -F 4 sorted_aligned.bam > mapped.bam
 
 #Filter BAM based on mapping qaulity
 
