@@ -23,5 +23,8 @@ zcat file.vcf.gz | grep -v '^#' | grep -oP "DP=\w+" | sed 's/DP=//' | awk '{s +=
 
 java -jar ~/seq-tools/snpEff/SnpSift.jar filter "(QUAL>30) & (AF > 0.15) & (AO > 4) & (DP > 10) & (STB < 0.95)" in.vcf 
 
+#VCF processing for SciClone input (Tumor heterogeneity)
+#VCF V4.1, Ion Proton variant caller generated vcf 
 
+cut -f 1,2,8 vcf_file.vcf | sed 's/;/\t/g' | cut -f 1,2,4,5 | awk '{print $1"\t"$2"\t"$4"\t"$3}' | sed 's/DP=//' | sed 's/AO=//' | awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$3-$4"\t"$4"\t"$4/$3*100}' | cut -f 1,2,5-7 > sciclone_input.txt
 
