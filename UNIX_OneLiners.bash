@@ -204,4 +204,8 @@ done
 ssconvert infile.xls outfile.txt #generates CSV file
 sed -i 's/,/\t/g' outfile.txt # CSV --> TSV file
 
+## Heatmap in R without clustering (For Gene expression)
+#http://r.789695.n4.nabble.com/Heatmap-2-eliminate-cluster-and-dendrogram-td857723.html
+
+heatmap.2(matrix, col = greenred(100), dendrogram = "none", Rowv = FALSE)
 
