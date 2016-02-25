@@ -130,6 +130,10 @@ awk 'FNR==NR{a[$4,$5]=$0;next}{if(b=a[$4,$5]){print b}}' file1 file2
 
 awk -F '\t' -v OFS='\t' 'NR==FNR{a[$1]=$1 OFS $2; next} $1 in a{print $2, a[$1]}' file1 file2 | awk '{print$2"\t"$1"\t"$3}'
 
+#Match first column in 2 files and print all the columns from 2 files
+
+join <(sort file1.txt) <(sort file2.txt) >out.txt
+
 #Extract text lines between 2 specific patterns
 
 nawk '/line1/, /line2/' inFile.txt
