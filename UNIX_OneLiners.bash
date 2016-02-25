@@ -213,3 +213,14 @@ sed -i 's/,/\t/g' outfile.txt # CSV --> TSV file
 
 heatmap.2(matrix, col = greenred(100), dendrogram = "none", Rowv = FALSE)
 
+# R
+# Find column number given the column name
+# Column name 'b' , df-data.frame
+which( colnames(df)=="b" ) #or
+
+match("b",names(df))
+
+
+
+
+
