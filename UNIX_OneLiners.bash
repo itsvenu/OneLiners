@@ -142,6 +142,10 @@ nawk '/line1/, /line2/' inFile.txt
 
 awk '{print substr($0, index($0,$2))}' infile.txt
 
+# Match empty feild with awk
+
+awk 'BEGIN {FS="\t"} $2="" {print}' file.txt
+
 # --- PERL
 
 # Modyfying HMM db(pfam) PF00012.3 --> PF00012
