@@ -1,3 +1,7 @@
+## Note down something quckly while googling, enter following into browser
+
+data:text/html, <html contenteditable>
+
 ## Basic One liners which are most useful
 
 #Download files from SRA (NCBI) with wget
