@@ -1,4 +1,14 @@
 
+# SAM file processing
+
+#Get only mapped reads from SAM/bam
+samtools view -b -F 4 file.bam > mapped.bam
+
+#for Unmapped
+samtools view -b -f 4 file.bam > unmapped.bam
+
+
+
 #Generate a vcf.gz along with its tabix indexed file
 #To use with vcftools
 
