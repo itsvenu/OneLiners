@@ -1,3 +1,4 @@
+
 ## Note down something quckly while googling, enter following into browser
 
 data:text/html, <html contenteditable>
