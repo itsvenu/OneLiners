@@ -1,3 +1,15 @@
+# Execute commands on all files paralelly - install `parallel`
+
+(wget -O - pi.dk/3 || curl pi.dk/3/ || fetch -o - http://pi.dk/3) | bash
+
+#parallel example with TopHat bam2fastx
+#converts BAM to fastq parallelly 
+
+parallel 'bam2fastx --fastq {} > {.}.fq' ::: *.bam
+
+
+
+
 
 # SAM file processing
 
