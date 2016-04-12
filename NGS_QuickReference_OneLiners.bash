@@ -7,9 +7,13 @@
 
 parallel 'bam2fastx --fastq {} > {.}.fq' ::: *.bam
 
+## GATK - Broad's hg19 build (for compatibility issues, we use this)
 
+wget ftp://ftp.broadinstitute.org/pub/seq/references/Homo_sapiens_assembly19.fasta
 
+# This build is compatible with dbSNP vcf file
 
+wget ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606/VCF/00-All.vcf.gz
 
 # SAM file processing
 
