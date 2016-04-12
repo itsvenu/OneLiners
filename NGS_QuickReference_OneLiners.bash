@@ -15,6 +15,10 @@ wget ftp://ftp.broadinstitute.org/pub/seq/references/Homo_sapiens_assembly19.fas
 
 wget ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606/VCF/00-All.vcf.gz
 
+# 1K Genome - Phase-3 VCF
+
+ wget "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz"
+
 # SAM file processing
 
 #Get only mapped reads from SAM/bam
