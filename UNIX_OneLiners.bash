@@ -3,6 +3,10 @@
 
 data:text/html, <html contenteditable>
 
+# Reverese complementary sequence with bash
+
+cat bio_185191.fa | paste - - | awk -F'\t' -vOFS='\t' '{gsub("A", "T", $2); gsub("T", "A", $2); gsub("G", "C", $2); gsub("C", "G", $2); print}' | tr '\t' '\n'
+
 ## Basic One liners which are most useful
 
 #Download files from SRA (NCBI) with wget
