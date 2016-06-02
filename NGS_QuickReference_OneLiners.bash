@@ -1,3 +1,9 @@
+# calculate all exon lengths of all genes 
+
+wget "ftp://ftp.ensembl.org/pub/release-84/gtf/homo_sapiens/Homo_sapiens.GRCh38.84.gtf.gz"
+
+zcat Homo_sapiens.GRCh38.84.gtf.gz | awk '{if($3=="exon") print $10"\t"$5-$4}' | sed -e 's/"//g' -e 's/;//' | bedtools groupby -i - -g 1 -c 2 -o sum > Exon_lengths.txt
+
 # Execute commands on all files paralelly - install `parallel`
 
 (wget -O - pi.dk/3 || curl pi.dk/3/ || fetch -o - http://pi.dk/3) | bash
