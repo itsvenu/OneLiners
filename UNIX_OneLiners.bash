@@ -155,6 +155,10 @@ awk '{print substr($0, index($0,$2))}' infile.txt
 
 awk 'BEGIN {FS="\t"} $2="" {print}' file.txt
 
+#absolute value of columns
+
+awk -F'\t' 'function abs(x){return ((x < 0.0) ? -x : x)} {if (abs($9) < 500) print $0}' file.txt
+
 # --- PERL
 
 # Modyfying HMM db(pfam) PF00012.3 --> PF00012
