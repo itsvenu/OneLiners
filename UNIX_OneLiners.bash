@@ -135,6 +135,10 @@ awk -VORS=, '{print$1}' input.txt | sed 's/, $/\n/' > out.txt
 
 awk 'FNR==NR{a[$4,$5]=$0;next}{if(b=a[$4,$5]){print b}}' file1 file2
 
+#Match first two columns and print entire row from a file if it matches
+
+awk -F'\t' 'NR==FNR{c[$1$2]++;next};c[$1$2] > 0' file1.txt file2.txt #prints from file2
+
 #Compare column1 from 2 files and print all the columns from both files
 
 awk -F '\t' -v OFS='\t' 'NR==FNR{a[$1]=$1 OFS $2; next} $1 in a{print $2, a[$1]}' file1 file2 | awk '{print$2"\t"$1"\t"$3}'
