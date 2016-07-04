@@ -3,7 +3,7 @@
 
 data:text/html, <html contenteditable>
 
-# SHORTEN terminal prompt length
+#### SHORTEN terminal prompt length
 
 # for current terminal
 
@@ -12,6 +12,10 @@ PS1='\u:\W\$ '
 # Cahnge it completely, add to ~./bashrc file
 http://askubuntu.com/questions/145618/how-can-i-shorten-my-command-line-bash-prompt
 
+### Create a figure of a directory structure with pdf
+
+tree -C -h Directory | aha > foo.html
+wkhtmltopdf foo.html foo.pdf
 
 # Reverese complementary sequence with bash
 
