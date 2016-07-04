@@ -3,6 +3,16 @@
 
 data:text/html, <html contenteditable>
 
+# SHORTEN terminal prompt length
+
+# for current terminal
+
+PS1='\u:\W\$ '
+
+# Cahnge it completely, add to ~./bashrc file
+http://askubuntu.com/questions/145618/how-can-i-shorten-my-command-line-bash-prompt
+
+
 # Reverese complementary sequence with bash
 
 cat bio_185191.fa | paste - - | awk -F'\t' -vOFS='\t' '{gsub("A", "T", $2); gsub("T", "A", $2); gsub("G", "C", $2); gsub("C", "G", $2); print}' | tr '\t' '\n'
