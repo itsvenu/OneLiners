@@ -45,6 +45,10 @@ csplit -z -q -n 4 -f sequence_ in.faa /\>/ {*}
 
 find . -name "*.pdb" -type f -exec cp {} ./newdirectory \;
 
+#DO something with all the files in dir. and subdire.
+
+for f in ./**/*/*.txt; do awk '{if($4<0.05) print $1"\t"$2"\t"$7}' $f > $f.sig; done
+
 #--------------
 #     sed     -
 #--------------
