@@ -117,6 +117,10 @@ grep -aob '\.' stringFile.txt --color=never | \grep -oE '[0-9]+' #returns simple
 #   awk    -
 #-----------
 
+# Print the longest line in quotes.txt
+
+awk 'length > max { max=length;maxline=$0 } END { print maxline; }' quotes.txt 
+
 # Remove repeated elements(duplicates)
 
 awk '!a[$1]++' input > output
