@@ -113,6 +113,10 @@ grep -v '^>' in.faa | tr -d "\n" | cut -c10 # residue in 10th postion ( -c1,10)-
 grep -aob '\.' stringFile.txt # returns index and charecter in colors Ex: 14:.
 grep -aob '\.' stringFile.txt --color=never | \grep -oE '[0-9]+' #returns simple index
 
+# Extract only words
+
+grep -oP "AF1=[0-9]\.[0-9]+" snvs_XI034_ICN-MB34_somatic_snvs_conf_8_to_10.vcf
+
 #-----------
 #   awk    -
 #-----------
