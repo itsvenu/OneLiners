@@ -76,6 +76,10 @@ sed -n '/MODEL         1/,/ENDMDL/p' in.pdb > out.pdb
 
 sed "N;s/\n/\t/" InFile.txt
 
+#write at the beginning of the file, i.e before first line
+
+sed '1i header1\theader2\theader3' file.tsv > newFile.tsv
+
 #-----------
 #   grep   -
 #-----------
