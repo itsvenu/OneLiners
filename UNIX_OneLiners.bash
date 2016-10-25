@@ -5,6 +5,11 @@ data:text/html, <html contenteditable>
 
 #### SHORTEN terminal prompt length
 
+# Extract filename - bash scripting
+
+http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+
+
 # for current terminal
 
 PS1='\u:\W\$ '
