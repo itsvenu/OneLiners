@@ -13,6 +13,8 @@ http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
 # Do the following
 
 export PATH=$PATH:/bin:/usr/local/bin
+or
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # for current terminal
 
