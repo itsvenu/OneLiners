@@ -9,6 +9,10 @@ data:text/html, <html contenteditable>
 
 http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
 
+# All the commands of *nix are not working (i.e. ls, cat, vi...etc) ?
+# Do the following
+
+export PATH=$PATH:/bin:/usr/local/bin
 
 # for current terminal
 
