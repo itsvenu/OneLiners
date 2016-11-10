@@ -63,6 +63,11 @@ for f in ./**/*/*.txt; do awk '{if($4<0.05) print $1"\t"$2"\t"$7}' $f > $f.sig; 
 #--------------
 #     sed     -
 #--------------
+# print 1st and last line of a text file
+
+sed -e 1b -e '$!d' file
+
+
 # Modifying headers of MSA
 
 sed 's/[^\s>]*\s//' input > output # pfam MSA
