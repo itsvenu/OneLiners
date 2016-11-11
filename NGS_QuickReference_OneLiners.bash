@@ -1,3 +1,19 @@
+# Combine regions based on a column value - BedTools
+
+cat A.bed
+
+chr1 1  10 2
+chr1 10 20 3
+chr1 20 30 3
+
+result
+
+chr1 1  10 2
+chr1 10 30 3
+
+cat A.bed | sort -k4,4 -k2,2 -k3,3n | groupBy -g 1,4 -c 2,3 -o min,max -full | awk -v OFS="\t" ' { print $1,$5,$6,$4}' 
+
+
 # make 1MB bins of reference genome
 
 https://www.biostars.org/p/70577/
