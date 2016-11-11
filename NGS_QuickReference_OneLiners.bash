@@ -1,3 +1,8 @@
+# make 1MB bins of reference genome
+
+https://www.biostars.org/p/70577/
+
+
 # calculate all exon lengths of all genes 
 
 wget "ftp://ftp.ensembl.org/pub/release-84/gtf/homo_sapiens/Homo_sapiens.GRCh38.84.gtf.gz"
