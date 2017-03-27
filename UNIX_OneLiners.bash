@@ -1,4 +1,9 @@
 
+# when devtools's install_github() command gives error do following - R
+
+getOption("unzip")
+options(unzip="internal")
+
 ## Note down something quckly while googling, enter following into browser
 
 data:text/html, <html contenteditable>
