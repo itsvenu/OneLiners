@@ -148,6 +148,10 @@ grep -oP "AF1=[0-9]\.[0-9]+" snvs_XI034_ICN-MB34_somatic_snvs_conf_8_to_10.vcf
 #   awk    -
 #-----------
 
+# split a file based on emptylines (RS= )
+
+awk -v RS= '{print > ("PWM-" NR ".txt")}'
+
 # Print the longest line in quotes.txt
 
 awk 'length > max { max=length;maxline=$0 } END { print maxline; }' quotes.txt 
